@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fauzan.githubuserfinal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="com.fauzan.githubuserfinal.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.fauzan.githubuserfinal.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <receiver android:name=".widget.FavoriteUserWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/favorite_user_widget_info" />
+        </receiver>
+
+        <activity android:name=".ui.SettingActivity" />
+
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <provider
+            android:name=".provider.FavoriteProvider"
+            android:authorities="com.fauzan.githubuserfinal"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.fauzan.githubuserfinal.READ_DATABASE"
+            android:writePermission="com.fauzan.githubuserfinal.WRITE_DATABASE" />
+
+        <activity android:name=".ui.FavoriteUserActivity" />
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.FollowActivity" />
+        <activity android:name=".ui.DetailUserActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".widget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

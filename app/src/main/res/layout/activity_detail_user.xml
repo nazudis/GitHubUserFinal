@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailUserActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_detail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_avatar_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_avatar_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_avatar_detail"
+            app:srcCompat="@drawable/ic_baseline_favorite_border" />
+
+        <ImageView
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary"
+            android:scaleType="centerCrop"
+            android:src="@drawable/github_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbarlayout"
+            android:contentDescription="@string/logo_github" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tv_avatar_detail"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/roundbackground"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/appbarlayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            style="@style/LayoutProfile"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_avatar_detail"
+            app:layout_constraintStart_toStartOf="@+id/tv_avatar_detail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_avatar_detail">
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextStyleHeader"
+                android:layout_marginBottom="8dp"
+                tools:text="@string/name" />
+
+            <TextView
+                android:id="@+id/tv_login_detail"
+                style="@style/DetailUserText"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="italic"
+                tools:text="@string/login" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            style="@style/LayoutProfile"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/tv_company"
+                style="@style/TextStyleHeader"
+                android:layout_marginBottom="8dp"
+                tools:text="@string/company" />
+
+            <TextView
+                android:id="@+id/tv_company_user"
+                style="@style/DetailUserText"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="italic"
+                tools:text="@string/company_name" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/DetailUserText"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="italic"
+                tools:text="@string/location" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LayoutProfile"
+            android:layout_width="340dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <LinearLayout
+                android:id="@+id/followers_btn"
+                style="@style/LayoutInfo"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tv_followersTitle"
+                    style="@style/TextStyleHeader"
+                    tools:text="@string/followers" />
+
+
+                <TextView
+                    android:id="@+id/tv_followers"
+                    style="@style/DetailUserText"
+                    tools:text="@string/fllwrs_num" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/following_btn"
+                style="@style/LayoutInfo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_followingTitle"
+                    style="@style/TextStyleHeader"
+                    tools:text="@string/following" />
+
+                <TextView
+                    android:id="@+id/tv_following"
+                    style="@style/DetailUserText"
+                    tools:text="@string/fllwng_num" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LayoutInfo">
+
+                <TextView
+                    android:id="@+id/tv_repoTitle"
+                    style="@style/TextStyleHeader"
+                    tools:text="@string/repos" />
+
+                <TextView
+                    android:id="@+id/tv_repo"
+                    style="@style/DetailUserText"
+                    tools:text="@string/repo_num" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_avatar_detail"
+            app:layout_constraintStart_toStartOf="@+id/tv_avatar_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_avatar_detail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

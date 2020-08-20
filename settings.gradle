@@ -1,0 +1,3 @@
+include ':favoriteuserapp'
+include ':app'
+rootProject.name = "GitHubUserFinal"

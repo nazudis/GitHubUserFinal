@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">GitHubUserFinal</string>
+
+    <!-- For Detail/Info User View   -->
+    <string name="login">User Name</string>
+    <string name="avatar_user">User Avatar</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="company_name">Company Name</string>
+    <string name="nothing"> - </string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="fllwng_num">0</string>
+    <string name="fllwrs_num">0</string>
+    <string name="repos">Repository</string>
+    <string name="repo_num">0</string>
+
+    <string name="text_home">Tap Icon Search to input a name</string>
+
+    <string name="go_to_detail">Go To Detail</string>
+
+    <!--  For About Activity  -->
+    <string name="logo_github">Logo Github</string>
+    <string name="location">Location</string>
+    <string name="slogan">is how people build software</string>
+    <string name="info">We’re supporting a community where more than 50 million* people learn, share, and work together to build software.</string>
+    <string name="october_2007">October 2007</string>
+    <string name="first_commit">First Commit</string>
+    <string name="san_francisco">San Francisco</string>
+    <string name="headquarters">Headquarters</string>
+    <string name="_100_million">100 Million*</string>
+    <string name="repositories_hosted">Repositories hosted</string>
+    <string name="info2">We’re working hard to build a supportive, welcoming place for users and GitHubbers alike.</string>
+    <string name="learn_more">Learn more about our commitment to diversity and inclusion.</string>
+
+    <!--  Menu Text  -->
+    <string name="about">About</string>
+    <string name="favorite">Favorite</string>
+    <string name="setting">Setting</string>
+
+    <string name="daily_reminder">Daily Reminder at 9AM</string>
+
+    <!--  Widget  -->
+    <string name="favorite_github_user">Favorite Github User</string>
+    <string name="empty_text">No Data</string>
+</resources>
